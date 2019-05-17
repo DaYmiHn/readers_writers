@@ -18,7 +18,7 @@ void writer(int& x, mutex& mtx)
 	    out.open("D:\\hello.txt"); 
 		if (out.is_open()){
 	        out << x << endl;
-	        cout<< "Ïèñàòåëü íàïèñàë:\t"<<x<<"\t"<<this_thread::get_id()<<endl;
+	        cout<< "ÐŸÐ¸ÑÐ°Ñ‚ÐµÐ»ÑŒ Ð½Ð°Ð¿Ð¸ÑÐ°Ð»:\t"<<x<<"\t"<<this_thread::get_id()<<endl;
 	    }
 		mtx.unlock();
 		usleep(400000);
@@ -34,7 +34,7 @@ void reader(int& x, mutex& mtx)
 			getline(in, line);	
 		    for(int i=0; i < 4;i++){
 		    	chitateli[i] = line;
-		    	cout <<"×èòàòåëü "<<i+1 <<" ïðî÷¸ë:\t" <<chitateli[i] <<"\t"<<this_thread::get_id()<< endl;
+		    	cout <<"Ð§Ð¸Ñ‚Ð°Ñ‚ÐµÐ»ÑŒ "<<i+1 <<" Ð¿Ñ€Ð¾Ñ‡Ñ‘Ð»:\t" <<chitateli[i] <<"\t"<<this_thread::get_id()<< endl;
 		    	if (i == 3) cout<< "\n";
 			}
 			in.close(); 
